@@ -12,9 +12,6 @@ taxonomies:
 
 menu:
     main:
-        # - name: Books
-        #   url: books/
-        #   weight: 5 
         - name: Publications
           url: publications/
           weight: 2
@@ -24,15 +21,6 @@ menu:
         - name: Runs
           url: runs/
           weight: 3
-        # - name: Courses
-        #   url: courses/
-        #   weight: 3
-        # - name: Data
-        #   url: data/
-        #   weight: 4 
-        # - name: Blog
-        #   url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-        #   weight: 6
 
 params:
     description: "This website hosts Taylor's research publications, curriculum vitae, personal projects, and contact information."
@@ -72,38 +60,14 @@ params:
               url: photography/
             - name: Runs
               url: runs/
-            # - name: Courses
-            #   url: courses/
-            # - name: Tags
-            #   url: tags/
-            # - name: Archive
-            #   url: archive/
-            # - name: Blog
-            #   url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
 
     socialIcons:
-        # - name: CV
-        #   url: cv.pdf
         - name: Email
           url: mailto:taylor.ccs13@gmail.com
-        # - name: Zoom
-        #   url: https://www.zoom.us/my/igelfeld
-        # - name: Location
-        #   url: location/
-        # - name: Office Hours
-        #   url: officehours/
         - name: Google Scholar
           url: https://scholar.google.com/citations?user=6IVx1XEAAAAJ&hl=en
         - name: GitHub
           url: https://github.com/Taylor-Chu
-        # - name: Substack
-        #   url: https://pmichaillat.substack.com
-        # - name: YouTube
-        #   url: https://www.youtube.com/@pmichaillat
-        # - name: Twitter
-        #   url: https://x.com/pmichaillat
-        # - name: Bluesky
-        #   url: https://bsky.app/profile/pmichaillat.bsky.social
 
     assets:
         disableScrollBarStyle: true
