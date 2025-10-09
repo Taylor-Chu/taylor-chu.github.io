@@ -17,21 +17,22 @@ I started running in the beginning of 2024 to lose weight and improve my cardiov
 
 ##### Personal Bests
 
-| Distance      | Time    | Date       | Location                  |
-| ------------- | ------- | ---------- | ------------------------- |
-| 5K            | 21:16   | 2024-11-09 | Edinburgh (Cramond)       |
-| 10K           | 46:31   | 2025-06-14 | Edinburgh (Holyrood Park) |
-| Half Marathon | 1:43:14 | 2025-05-25 | Edinburgh to Musselburg   |
+| Distance      | Time    | Date       | Location                |
+| ------------- | ------- | ---------- | ----------------------- |
+| 5K            | 21:16   | 2024-11-09 | Edinburgh (Cramond)     |
+| 10K           | 46:11   | 2025-10-05 | Aviemore                |
+| Half Marathon | 1:43:14 | 2025-05-25 | Edinburgh to Musselburg |
 
 ---
 
 ##### Races
 
-| Distance      | Time    | Date       | Event                                  |
-| ------------- | ------- | ---------- | -------------------------------------- |
-| Half Marathon | 1:51:28 | 2024-08-25 | Scottish Half Marathon 2024            |
-| Half Marathon | 1:44:56 | 2025-02-01 | Edinburgh Winter Warmer Run 2025       |
-| Half Marathon | 1:43:12 | 2025-05-25 | Edinburgh Marathon Festival (EMF) 2025 |
+| Distance      | Time    | Date       | Hair colour | Event                                  |
+| ------------- | ------- | ---------- | ----------- | -------------------------------------- |
+| 10k           | 46:11   | 2025-10-05 | Purple      | 2025 Aviemore Race for All             |
+| Half Marathon | 1:43:12 | 2025-05-25 | Peach       | Edinburgh Marathon Festival (EMF) 2025 |
+| Half Marathon | 1:44:56 | 2025-02-01 | Black       | Edinburgh Winter Warmer Run 2025       |
+| Half Marathon | 1:51:28 | 2024-08-25 | Black       | Scottish Half Marathon 2024            |
 
 ---
 
