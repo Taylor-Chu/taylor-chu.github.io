@@ -17,22 +17,23 @@ I started running in the beginning of 2024 to lose weight and improve my cardiov
 
 ##### Personal Bests
 
-| Distance      | Time    | Date       | Location                |
-| ------------- | ------- | ---------- | ----------------------- |
-| 5K            | 21:16   | 2024-11-09 | Edinburgh (Cramond)     |
-| 10K           | 46:11   | 2025-10-05 | Aviemore                |
-| Half Marathon | 1:43:14 | 2025-05-25 | Edinburgh to Musselburg |
+| Distance      | Time    | Date       | Location            |
+| ------------- | ------- | ---------- | ------------------- |
+| 5K            | 21:16   | 2024-11-09 | Edinburgh (Cramond) |
+| 10K           | 46:11   | 2025-10-05 | Aviemore            |
+| Half Marathon | 1:34:46 | 2026-02-22 | Alicante            |
 
 ---
 
 ##### Races
 
-| Distance      | Time    | Date       | Hair colour | Event                                  |
-| ------------- | ------- | ---------- | ----------- | -------------------------------------- |
-| 10k           | 46:11   | 2025-10-05 | Purple      | 2025 Aviemore Race for All             |
-| Half Marathon | 1:43:12 | 2025-05-25 | Peach       | Edinburgh Marathon Festival (EMF) 2025 |
-| Half Marathon | 1:44:56 | 2025-02-01 | Black       | Edinburgh Winter Warmer Run 2025       |
-| Half Marathon | 1:51:28 | 2024-08-25 | Black       | Scottish Half Marathon 2024            |
+| Distance      | Time    | Date       | Hair colour    | Event                                  |
+| ------------- | ------- | ---------- | -------------- | -------------------------------------- |
+| Half Marathon | 1:24:46 | 2025-02-22 | Black + Blonde | Alicante                               |
+| 10k           | 46:11   | 2025-10-05 | Purple         | 2025 Aviemore Race for All             |
+| Half Marathon | 1:43:12 | 2025-05-25 | Peach          | Edinburgh Marathon Festival (EMF) 2025 |
+| Half Marathon | 1:44:56 | 2025-02-01 | Black          | Edinburgh Winter Warmer Run 2025       |
+| Half Marathon | 1:51:28 | 2024-08-25 | Black          | Scottish Half Marathon 2024            |
 
 ---
 
