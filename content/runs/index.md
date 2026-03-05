@@ -29,7 +29,7 @@ I started running in the beginning of 2024 to lose weight and improve my cardiov
 
 | Distance      | Time    | Date       | Hair colour    | Event                                  |
 | ------------- | ------- | ---------- | -------------- | -------------------------------------- |
-| Half Marathon | 1:24:46 | 2025-02-22 | Black + Blonde | Alicante                               |
+| Half Marathon | 1:24:46 | 2026-02-22 | Black + Blonde | Alicante                               |
 | 10k           | 46:11   | 2025-10-05 | Purple         | 2025 Aviemore Race for All             |
 | Half Marathon | 1:43:12 | 2025-05-25 | Peach          | Edinburgh Marathon Festival (EMF) 2025 |
 | Half Marathon | 1:44:56 | 2025-02-01 | Black          | Edinburgh Winter Warmer Run 2025       |
