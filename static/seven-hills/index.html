@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Hills of Edinburgh — Live Tracker</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1>Seven Hills of Edinburgh</h1>
+    <span id="runnerName" class="runner-name"></span>
+  </div>
+  <div id="liveBadge" class="badge stale">WAITING</div>
+</header>
+
+<div id="offRouteBanner" class="off-route-banner hidden">⚠ OFF ROUTE — <span id="offRouteDist"></span> from the route line</div>
+<div id="finishBanner" class="finish-banner hidden">🏁 FINISHED!</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-label">Hills</div><div class="stat-value" id="stHills">–/7</div></div>
+  <div class="stat"><div class="stat-label">Distance</div><div class="stat-value" id="stDist">–</div></div>
+  <div class="stat"><div class="stat-label">Progress</div><div class="stat-value" id="stPct">–</div></div>
+  <div class="stat"><div class="stat-label">Elapsed</div><div class="stat-value" id="stElapsed">–</div></div>
+  <div class="stat"><div class="stat-label">Pace (now)</div><div class="stat-value" id="stPace">–</div></div>
+  <div class="stat"><div class="stat-label">Avg pace</div><div class="stat-value" id="stAvgPace">–</div></div>
+  <div class="stat"><div class="stat-label">Est. finish</div><div class="stat-value" id="stEta">–</div></div>
+</div>
+
+<div id="map"></div>
+
+<div class="hills" id="hillsRow"></div>
+
+<div class="route-progress">
+  <span class="rp-label">0 km</span>
+  <div class="rp-track">
+    <div id="rpFill" class="rp-fill"></div>
+    <span class="rp-flag">🏁</span>
+    <div id="rpRunner" class="rp-runner">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <g class="pose p1">
+          <circle class="rh" cx="20" cy="6" r="3"/>
+          <path d="M18.8 8.8 L15 17"/>
+          <path d="M18 10.5 L22.5 12.5 L25 9.5"/>
+          <path d="M18 10.5 L13.5 12.5 L11 16"/>
+          <path d="M15 17 L20.5 20.5 L24 26"/>
+          <path d="M15 17 L11.5 21.5 L6.5 23"/>
+        </g>
+        <g class="pose p2">
+          <circle class="rh" cx="20" cy="7" r="3"/>
+          <path d="M18.8 9.8 L15 18"/>
+          <path d="M18 11.5 L14 13 L17 16"/>
+          <path d="M18 11.5 L22 13 L20 16.5"/>
+          <path d="M15 18 L17.5 23 L16 28.5"/>
+          <path d="M15 18 L11 22 L12.5 27.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <span class="rp-label" id="rpTotal">– km</span>
+</div>
+
+<footer>
+  <label class="follow"><input type="checkbox" id="followChk" checked> Follow runner</label>
+  <span id="fixInfo" class="fix-info"></span>
+</footer>
+
+<script>
+// This copy is hosted on GitHub Pages; the tracker server lives behind a
+// trycloudflare tunnel whose URL changes every start. start_race.sh publishes the
+// current URL to backend.json — resolve it now and re-check every 30 s so a
+// mid-race tunnel restart is picked up without reloading. The cache-busting
+// query string skips the Pages CDN cache (~10 min otherwise).
+(function resolveBackend() {
+  fetch(`backend.json?_=${Date.now()}`, { cache: "no-store" })
+    .then(r => r.json())
+    .then(b => { if (b.url) window.TRACKER_API = b.url.replace(/\/+$/, ""); })
+    .catch(() => {})
+    .finally(() => setTimeout(resolveBackend, 30000));
+})();
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

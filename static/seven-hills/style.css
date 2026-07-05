@@ -1,0 +1,138 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f172a; --panel: #1e293b; --panel2: #334155;
+  --text: #e2e8f0; --muted: #94a3b8;
+  --accent: #38bdf8; --good: #4ade80; --warn: #fbbf24; --bad: #f87171;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  display: flex; flex-direction: column; min-height: 100vh;
+}
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; background: var(--panel);
+}
+h1 { font-size: 1.1rem; font-weight: 700; }
+.runner-name { color: var(--accent); font-size: .9rem; }
+.badge {
+  font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+  letter-spacing: .05em;
+}
+.badge.live { background: #14532d; color: var(--good); }
+.badge.live::before { content: "● "; animation: blink 1.6s infinite; }
+.badge.stale { background: #4a3005; color: var(--warn); }
+@keyframes blink { 50% { opacity: .3; } }
+
+.off-route-banner {
+  background: var(--bad); color: #450a0a; text-align: center;
+  padding: 6px; font-weight: 700; font-size: .9rem;
+}
+.finish-banner {
+  background: var(--good); color: #052e16; text-align: center;
+  padding: 8px; font-weight: 800; font-size: 1.05rem;
+}
+.hidden { display: none; }
+
+.stats {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px;
+  background: var(--bg);
+}
+.stat { background: var(--panel); padding: 8px 4px; text-align: center; }
+.stat-label { font-size: .62rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.stat-value { font-size: 1.05rem; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .stat-value { font-size: .95rem; }
+}
+
+#map { flex: 1; min-height: 340px; }
+
+/* bottom route progress bar with animated runner */
+.route-progress {
+  display: flex; align-items: center; gap: 10px;
+  padding: 26px 14px 10px; background: var(--panel);
+  border-top: 1px solid var(--panel2);
+}
+.rp-label { font-size: .7rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.rp-track { position: relative; flex: 1; height: 10px; border-radius: 999px; background: var(--panel2); }
+.rp-fill {
+  height: 100%; width: 0; border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--good));
+  transition: width 1.5s linear;
+}
+.rp-flag { position: absolute; right: -3px; bottom: 9px; font-size: 15px; line-height: 1; }
+.rp-runner {
+  position: absolute; left: 0; bottom: 7px; width: 28px; height: 28px;
+  transform: translateX(-50%); transition: left 1.5s linear;
+}
+.rp-runner svg { width: 100%; height: 100%; overflow: visible; }
+.rp-runner .pose path {
+  fill: none; stroke: var(--text); stroke-width: 2.6;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.rp-runner .pose .rh { fill: var(--text); stroke: none; }
+.rp-runner .p2 { opacity: 0; }
+.rp-runner.running .p1 { animation: stride .5s steps(1, end) infinite; }
+.rp-runner.running .p2 { animation: stride .5s steps(1, end) infinite; animation-delay: -.25s; }
+@keyframes stride { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.rp-runner.finished .pose path, .rp-runner.finished .pose .rh { stroke: var(--good); }
+.rp-runner.finished .pose .rh { fill: var(--good); }
+
+.hills { display: flex; gap: 6px; padding: 8px 10px; overflow-x: auto; background: var(--panel); }
+.hill {
+  flex: 1; min-width: 76px; text-align: center; padding: 6px 4px; border-radius: 8px;
+  background: var(--panel2); font-size: .68rem; color: var(--muted); border: 1px solid transparent;
+}
+.hill .num { font-weight: 800; font-size: .9rem; display: block; color: var(--text); }
+.hill.done { background: #14532d; color: #bbf7d0; border-color: var(--good); }
+.hill.done .num { color: var(--good); }
+.hill.next { border-color: var(--accent); color: var(--text); }
+.hill .t { display: block; font-size: .62rem; margin-top: 2px; }
+
+footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 12px; background: var(--panel); font-size: .75rem; color: var(--muted);
+  border-top: 1px solid var(--panel2);
+}
+.follow input { vertical-align: -2px; }
+
+/* map markers */
+.runner-icon { position: relative; }
+.runner-icon .dot {
+  width: 16px; height: 16px; border-radius: 50%; background: var(--accent);
+  border: 3px solid #fff; box-shadow: 0 0 6px rgba(0,0,0,.6);
+}
+.runner-icon .pulse {
+  position: absolute; top: -7px; left: -7px; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--accent); opacity: .35; animation: pulse 2s infinite;
+}
+@keyframes pulse { 0% { transform: scale(.5); opacity: .5; } 100% { transform: scale(1.4); opacity: 0; } }
+.hill-icon {
+  width: 22px; height: 22px; border-radius: 50%; background: #475569; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font: 700 11px/1 -apple-system, sans-serif; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+.hill-icon.done { background: #16a34a; }
+
+/* tracker + admin pages */
+.card {
+  max-width: 480px; margin: 16px auto; background: var(--panel); border-radius: 12px;
+  padding: 18px; width: calc(100% - 24px);
+}
+.card h2 { font-size: 1rem; margin-bottom: 10px; }
+.card label { display: block; font-size: .75rem; color: var(--muted); margin: 10px 0 4px; }
+.card input[type=text], .card input[type=datetime-local], .card input[type=url], .card select {
+  width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--panel2);
+  background: var(--bg); color: var(--text); font-size: .95rem;
+}
+button {
+  padding: 12px 18px; border: 0; border-radius: 10px; font-size: 1rem; font-weight: 700;
+  background: var(--accent); color: #082f49; cursor: pointer; margin-top: 12px;
+}
+button.stop { background: var(--bad); color: #450a0a; }
+button.secondary { background: var(--panel2); color: var(--text); font-size: .85rem; padding: 8px 14px; }
+.big { width: 100%; padding: 18px; font-size: 1.2rem; }
+.status-line { font-size: .8rem; color: var(--muted); margin-top: 8px; word-break: break-word; }
+.status-line b { color: var(--text); }
+.ok { color: var(--good); } .err { color: var(--bad); }
